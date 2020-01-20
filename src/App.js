@@ -24,20 +24,27 @@ function App() {
     setAwayScore(awayScore + 3)
   }
 
+  const resetScores = () => {
+    setHomeScore(0)
+    setAwayScore(0)
+  }
+
+
+
   return (
     <div className="container">
       <section className="scoreboard">
         <div className="topRow">
           <div className="home">
-            <h2 className="home__name">Lions</h2>
+            <h2 className="home__name">Chiefs</h2>
 
             {/* TODO STEP 3 - We need to change the hardcoded values in these divs to accept dynamic values from our state. */}
 
             <div className="home__score">{homeScore}</div>
           </div>
-          <div className="timer">00:03</div>
+          <div className="timer">15:00</div>
           <div className="away">
-            <h2 className="away__name">Tigers</h2>
+            <h2 className="away__name">49ers</h2>
             <div className="away__score">{awayScore}</div>
           </div>
         </div>
@@ -52,6 +59,9 @@ function App() {
         <div className="awayButtons">
           <button className="awayButtons__touchdown" onClick={awayTouchdown}>Away Touchdown</button>
           <button className="awayButtons__fieldGoal" onClick={awayFieldgoal}>Away Field Goal</button>
+        </div>
+        <div className="resetButton">
+          <button className="reset__button" onClick={resetScores}>Reset</button>
         </div>
       </section>
     </div>
